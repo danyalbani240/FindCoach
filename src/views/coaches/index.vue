@@ -7,9 +7,17 @@
     </div>
     <!-- check if there is any Coach or not to show -->
     <ul v-if="hasCoach">
-      <li v-for="coach in filteredCoaches" :key="coach.id">
+      <coach-item
+        v-for="coach in filteredCoaches"
+        :firstName="coach.firstName"
+        :lastName="coach.lastName"
+        :areas="coach.areas"
+        :rate="coach.hourlyRate"
+        :id="coach.id"
+        :key="coach.id"
+      >
         {{ coach.firstName }}
-      </li>
+      </coach-item>
     </ul>
     <p v-else>No Coaches Found</p>
   </section>
@@ -19,8 +27,9 @@
 import CoachDetail from "./CoachDetail.vue";
 import { useStore } from "vuex";
 import { computed } from "@vue/reactivity";
+import CoachItem from "../../components/CoachItem.vue";
 export default {
-  components: { CoachDetail },
+  components: { CoachDetail, CoachItem },
   setup() {
     const store = useStore();
     // Coaches To Show in The List
