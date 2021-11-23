@@ -19,6 +19,7 @@ const routes = [
   {
     path: "/coaches/:id",
     component: CoachDetail,
+    props: true,
   },
   {
     path: "/login",

@@ -66,9 +66,7 @@ export default {
     let coachContactLink = computed(
       () => route.path + "/" + props.id + "/contact"
     );
-    let coachDetailsLink = computed(
-      () => route.path + "/" + props.id + "/contact"
-    );
+    let coachDetailsLink = computed(() => route.path + "/" + props.id);
     return {
       fullName,
       coachContactLink,
