@@ -2,11 +2,13 @@
   <section>Filter</section>
   <section>
     <div class="controls">
-      <button>refresh</button>
-      <router-link to="/Register">ثبت نام به عنوان مربی</router-link>
+      <base-button name="refresh" />
+      <router-link to="/Register"
+        ><base-button name="ثبت نام به عنوان مربی" />
+      </router-link>
     </div>
     <!-- check if there is any Coach or not to show -->
-    <ul v-if="hasCoach">
+    <ul class="flex" v-if="hasCoach">
       <coach-item
         v-for="coach in filteredCoaches"
         :firstName="coach.firstName"
